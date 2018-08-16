@@ -70,7 +70,10 @@ public class FriendChatFrame extends JFrame {
 		btSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//获取信息
-				String msg = taInput.getText();
+				String msg = taInput.getText().trim();
+				if ("".equals(msg)) {
+					return ;
+				}
 				
 				//处理信息
 				Map<String, Object> msgMap = new HashMap<>();
